@@ -23,8 +23,7 @@ export function Header() {
     }
   }
 
-  const { wishList, handleAddOrRemoveMovieOnWishList, isMovieInWishList } =
-   useWishList();
+  const { wishList } = useWishList();
 
   return (
     <Styles.Container>
