@@ -6,6 +6,7 @@ import { Button } from "../Button"
 import { Link } from "../Link"
 import { ButtonVariants } from "../Button/types"
 import { useState, FormEvent } from 'react'
+import { useWishList } from "../../hooks/WishList"
 
 
 export function Header() {
@@ -21,6 +22,9 @@ export function Header() {
       navigate(`/search?keyword=${search}`)
     }
   }
+
+  const { wishList, handleAddOrRemoveMovieOnWishList, isMovieInWishList } =
+   useWishList();
 
   return (
     <Styles.Container>
@@ -40,7 +44,7 @@ export function Header() {
 
           <Link to="/wishlist">
               <FaBars />
-                Minha lista
+                Minha lista ({wishList.length})
           </Link>
       </div>
 
